@@ -23,6 +23,7 @@ c.perform()
 c.close()
 
 ip = response.getvalue()
+ip = ip.rstrip()
 
 sql = ("SELECT Name FROM IPAddresses")
 result = x.execute(sql)
@@ -42,3 +43,7 @@ except:
 	print "didn't work"
 
 conn.close()
+
+log = "IP Update at: " + str(date) + " With IP: " + ip
+with open("Logs/ipupdate_log.txt", "a") as logfile:
+	logfile.write(log)
