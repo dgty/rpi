@@ -44,6 +44,6 @@ except:
 
 conn.close()
 
-log = "IP Update at: " + str(date) + " With IP: " + ip
-with open("Logs/ipupdate_log.txt", "a") as logfile:
+log = "IP Update at: " + str(date) + " With IP: " + ip + " \n"
+with open("Scripts/Logs/ipupdate_log.txt", "a") as logfile:
 	logfile.write(log)
