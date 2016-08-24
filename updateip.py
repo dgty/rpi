@@ -25,14 +25,7 @@ c.close()
 ip = response.getvalue()
 ip = ip.rstrip()
 
-sql = ("SELECT Name FROM IPAddresses")
-result = x.execute(sql)
-for row in x.fetchall() :
-	print row
-
 query = """UPDATE IPAddresses SET IP='%s',Date='%s' WHERE Name='%s' """ % (ip,date, name)
-
-print query
 
 try:
 	x.execute(query)
